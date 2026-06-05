@@ -8,3 +8,4 @@ Réalignement des colonnes dans admin/stat
 Modification de l'optimisateur de tournée 
 La fonction optimizeRoute appelle désormais le service Trip d'OSRM (router.project-osrm.org) API Gratuite (attention a ne pas trop appeler la fx)
 Ajout de graphiques en test
+Refonte visuelle
