@@ -1947,6 +1947,160 @@ footer {
   flex-wrap: wrap;
   gap: 8px;
 }
+
+/* ============ v3 — selecteur de tournee compact ============ */
+.route-select-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.route-select {
+  flex: 1; min-width: 230px; max-width: 460px;
+  padding: 12px 14px;
+  border: 1.5px solid var(--line-strong);
+  background: var(--paper);
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 15px; font-weight: 600; color: var(--ink);
+  cursor: pointer; outline: none; border-radius: 0;
+}
+.route-select:focus { box-shadow: 2px 2px 0 var(--accent); }
+.route-select-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--ink-muted);
+}
+
+/* ============ v3 — magasins desactives ============ */
+.store-row.store-disabled {
+  opacity: 0.72;
+  background: var(--bg-deep);
+  border-style: dashed;
+  padding: 10px 14px;
+  gap: 4px;
+}
+.store-disabled-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.store-disabled-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px; text-transform: uppercase; letter-spacing: 0.1em;
+  background: var(--ink-muted); color: var(--paper);
+  padding: 3px 7px; flex-shrink: 0;
+}
+.store-disabled-name { font-weight: 600; font-size: 14px; color: var(--ink-soft); }
+.store-disabled-note { font-size: 12.5px; color: var(--ink-soft); font-style: italic; }
+
+/* ============ v3 — quantite annoncee au telephone ============ */
+.store-announce { display: flex; align-items: center; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+.store-announce label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--ink-muted);
+}
+.store-announce input {
+  width: 72px; padding: 6px 8px;
+  border: 1px dashed var(--line-strong);
+  background: rgba(255,255,255,0.6);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px; text-align: center; outline: none;
+}
+.store-announce input:focus { border-style: solid; background: #fff; }
+.store-announce select {
+  padding: 6px 8px;
+  border: 1px dashed var(--line-strong);
+  background: rgba(255,255,255,0.6);
+  font-family: inherit; font-size: 12px; outline: none;
+}
+.drive-announce {
+  background: rgba(184,137,58,0.12);
+  border-left: 3px solid var(--gold);
+  padding: 10px 14px; margin-bottom: 14px;
+}
+.drive-announce-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px; text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--gold); margin-bottom: 3px;
+}
+.drive-announce-text { font-size: 14px; font-weight: 600; }
+.route-announce {
+  display: inline-block; margin-top: 4px;
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  color: var(--gold); font-weight: 600;
+}
+
+/* ============ v3 — panneau impact anti-gaspillage ============ */
+.impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px; }
+.impact-tile {
+  border: 1.5px solid var(--line-strong);
+  background: var(--bg-deep);
+  padding: 16px 14px; text-align: center;
+}
+.impact-value { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 700; line-height: 1.1; }
+.impact-value .impact-unit { font-size: 13px; font-weight: 400; color: var(--ink-muted); margin-left: 3px; }
+.impact-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--ink-muted); margin-top: 7px; line-height: 1.5;
+}
+.impact-note { font-size: 11.5px; color: var(--ink-muted); font-style: italic; margin-top: 12px; }
+
+/* ============ v3 — editeur de magasin (admin) ============ */
+.admin-store-row.row-disabled { opacity: 0.55; }
+.admin-store-row .admin-disabled-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px; text-transform: uppercase; letter-spacing: 0.08em;
+  background: var(--ink-muted); color: var(--paper);
+  padding: 2px 6px; margin-left: 6px; white-space: nowrap;
+}
+.store-editor {
+  background: var(--bg-deep);
+  border: 1px dashed var(--line-strong);
+  border-top: none;
+  padding: 16px;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;
+}
+.store-editor .se-field label {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px; text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--ink-muted); margin-bottom: 4px;
+}
+.store-editor .se-field input {
+  width: 100%; padding: 8px 10px;
+  border: 1px solid var(--line-strong);
+  background: var(--paper);
+  font-family: inherit; font-size: 13px; outline: none;
+}
+.store-editor .se-full { grid-column: 1 / -1; }
+.store-editor .se-actions { grid-column: 1 / -1; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.store-editor .se-sep { grid-column: 1 / -1; border-top: 1px dashed var(--line-strong); margin: 2px 0; }
+.geo-status { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-muted); }
+
+/* ============ v3 — fiabilite de l'itineraire ============ */
+.route-source-warn {
+  background: var(--red-soft);
+  border: 1.5px solid var(--red);
+  padding: 10px 14px; font-size: 13px;
+  margin-bottom: 14px;
+  display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+}
+.drive-reopt {
+  display: block; margin: 12px auto 0;
+  background: none; border: 1px dashed var(--line-strong);
+  padding: 8px 14px;
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  color: var(--ink-soft); cursor: pointer;
+}
+.drive-reopt:hover { border-color: var(--ink); color: var(--ink); }
+
+/* ============ v3 — formulaire des facteurs d'impact ============ */
+.impact-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; align-items: end; }
+.impact-form .if-field label {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px; text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--ink-muted); margin-bottom: 4px;
+}
+.impact-form .if-field input {
+  width: 100%; padding: 8px 10px;
+  border: 1.5px solid var(--line-strong);
+  background: var(--paper);
+  font-family: 'JetBrains Mono', monospace; font-size: 13px; outline: none;
+}
 </style>
 </head>
 <body>
@@ -2008,7 +2162,7 @@ footer {
 
     <div class="stats-row">
       <div class="stat-card">
-        <div class="stat-label">Magasins totaux</div>
+        <div class="stat-label">Magasins actifs</div>
         <div class="stat-value" id="stat-total">0</div>
       </div>
       <div class="stat-card">
@@ -2066,8 +2220,11 @@ footer {
     </div>
 
     <div class="route-selector" id="route-selector" style="display:none;">
-      <div class="route-selector-title">Choisir une tournée</div>
-      <div class="route-selector-list" id="route-selector-list"></div>
+      <div class="route-selector-title">Tournée affichée</div>
+      <div class="route-select-row">
+        <select class="route-select" id="route-select" aria-label="Choisir une tournée"></select>
+        <span class="route-select-count" id="route-select-count"></span>
+      </div>
     </div>
 
     <div class="driver-toolbar" id="driver-toolbar" style="display:none;">
@@ -2182,12 +2339,21 @@ footer {
                   <th class="num">Pièces</th>
                   <th class="num">Visites</th>
                   <th class="num">Moy./visite</th>
+                  <th class="num">Perdues</th>
+                  <th class="num">Taux perte</th>
                   <th>Part du total</th>
                 </tr>
               </thead>
               <tbody id="store-perf-body"></tbody>
             </table>
           </div>
+        </div>
+
+        <div class="panel" data-panel="impact">
+          <h2 class="panel-title">Impact anti-gaspillage</h2>
+          <p class="panel-subtitle">Ce que vos récupérations représentent concrètement (calculé sur les pièces nettes, après tri)</p>
+          <div class="impact-grid" id="impact-tiles"></div>
+          <p class="impact-note">Facteurs de conversion réglables dans Admin → Paramètres → Facteurs d'impact.</p>
         </div>
 
         <div class="panel" data-panel="durations">
@@ -2214,6 +2380,7 @@ footer {
                   <th>Magasin</th>
                   <th>Adresse</th>
                   <th class="num">Pièces</th>
+                  <th class="num">Perdues</th>
                   <th>Statut</th>
                 </tr>
               </thead>
@@ -2239,6 +2406,7 @@ footer {
                   <th class="num">Arrêts</th>
                   <th class="num">Faits</th>
                   <th class="num">Pièces</th>
+                  <th class="num">Perdues</th>
                   <th class="num">Distance</th>
                   <th class="num">Estimé</th>
                   <th class="num">Réel</th>
@@ -2330,6 +2498,7 @@ footer {
                   <th style="width: 40px;">N°</th>
                   <th>Magasin</th>
                   <th style="width: 100px;">Pièces</th>
+                  <th style="width: 110px;">Rejetées<br><span style="font-weight:normal; font-size:9px;">(décongelées)</span></th>
                   <th style="width: 100px;">Validé ?</th>
                   <th style="width: 100px;"></th>
                 </tr>
@@ -2371,7 +2540,7 @@ footer {
           <button class="btn btn-primary btn-sm" id="btn-add-store">Ajouter</button>
         </div>
         <p style="font-size: 12px; color: var(--ink-muted); margin-top: 8px; font-style: italic;">
-          Les coordonnées GPS sont automatiquement déduites de l'adresse (le magasin apparaîtra dans la tournée optimisée dès le premier usage).
+          Les coordonnées GPS sont recherchées automatiquement en ligne (OpenStreetMap) à partir de l'adresse, avec une estimation par code postal en secours. Vous pouvez les affiner via « Modifier ».
         </p>
       </div>
 
@@ -2418,6 +2587,30 @@ footer {
           <label for="depot-address">Adresse :</label>
           <input type="text" id="depot-address" placeholder="ex: Rue de Carouge 25, 1205 Genève" style="min-width: 300px; letter-spacing: 0;">
           <button class="btn btn-primary btn-sm" id="btn-save-depot">Enregistrer</button>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top: 24px;">
+        <h2 class="panel-title">Facteurs d'impact anti-gaspillage</h2>
+        <p class="panel-subtitle">Servent à convertir les pièces nettes (après tri) en kg, repas, CO₂ et valeur marchande dans les statistiques</p>
+        <div class="impact-form">
+          <div class="if-field">
+            <label for="impact-kg">Poids moyen d'une pièce (kg)</label>
+            <input type="number" id="impact-kg" min="0" step="0.05" placeholder="0.4">
+          </div>
+          <div class="if-field">
+            <label for="impact-meals">Repas équivalents par kg</label>
+            <input type="number" id="impact-meals" min="0" step="0.1" placeholder="2.5">
+          </div>
+          <div class="if-field">
+            <label for="impact-co2">kg CO₂e évités par kg de viande</label>
+            <input type="number" id="impact-co2" min="0" step="0.1" placeholder="13.6">
+          </div>
+          <div class="if-field">
+            <label for="impact-chf">Valeur marchande (CHF / kg)</label>
+            <input type="number" id="impact-chf" min="0" step="0.5" placeholder="16">
+          </div>
+          <button class="btn btn-primary btn-sm" id="btn-save-impact">Enregistrer</button>
         </div>
       </div>
 
@@ -2594,6 +2787,7 @@ function defaultDashboardConfig() {
       { id: 'cumulative', visible: true },
       { id: 'weekly',     visible: true },
       { id: 'storeperf',  visible: true },
+      { id: 'impact',     visible: true },
       { id: 'durations',  visible: true },
       { id: 'history',    visible: true },
       { id: 'tours',      visible: true },
@@ -2608,6 +2802,8 @@ function getDefaults() {
     passwordSite: '1234',
     passwordAdmin: '4321',
     dashboardConfig: defaultDashboardConfig(),
+    // Facteurs de conversion pour le panneau Impact anti-gaspillage
+    impactConfig: { kgPerPiece: 0.4, mealsPerKg: 2.5, co2PerKg: 13.6, chfPerKg: 16 },
     // Modèle saisies : { 'AAAA-MM-JJ': { date, storeStatuses, validated, validatedAt, optimizedRoute, ... } }
     saisies: {},
     // Modèle collectes : { 'AAAA-MM-JJ-idMagasin': { date, storeId, storeName, address, qty, savedAt } }
@@ -2657,6 +2853,7 @@ async function initFirebaseSync() {
       if (data.passwordSite) state.passwordSite = data.passwordSite;
       if (data.passwordAdmin) state.passwordAdmin = data.passwordAdmin;
       if (data.dashboardConfig) state.dashboardConfig = data.dashboardConfig;
+      if (data.impactConfig) state.impactConfig = data.impactConfig;
     } else {
       await setDoc(settingsRef, {
         stores: state.stores,
@@ -2664,6 +2861,7 @@ async function initFirebaseSync() {
         passwordSite: state.passwordSite,
         passwordAdmin: state.passwordAdmin,
         dashboardConfig: state.dashboardConfig,
+        impactConfig: state.impactConfig,
       });
     }
     // Écoute les changements de paramètres
@@ -2675,6 +2873,7 @@ async function initFirebaseSync() {
         if (data.passwordSite) state.passwordSite = data.passwordSite;
         if (data.passwordAdmin) state.passwordAdmin = data.passwordAdmin;
         if (data.dashboardConfig) state.dashboardConfig = data.dashboardConfig;
+        if (data.impactConfig) state.impactConfig = data.impactConfig;
         saveLocal();
         rerenderAll();
       }
@@ -2716,6 +2915,7 @@ async function pushSettings() {
       passwordSite: state.passwordSite,
       passwordAdmin: state.passwordAdmin,
       dashboardConfig: state.dashboardConfig || defaultDashboardConfig(),
+      impactConfig: impactCfg(),
     });
   } catch(e) { console.error(e); showToast('Erreur de sauvegarde Firebase', 'error'); }
 }
@@ -2794,6 +2994,66 @@ function defaultTourDate() {
   return d.toISOString().slice(0, 10);
 }
 
+/* v3 — utilitaires généraux */
+function escapeHtml(t) {
+  return String(t == null ? '' : t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+// Un magasin désactivé redevient actif automatiquement après sa date de réactivation
+function isStoreDisabled(s) {
+  if (!s || !s.disabled) return false;
+  if (s.disabledUntil && todayISO() > s.disabledUntil) return false;
+  return true;
+}
+
+function impactCfg() {
+  const d = { kgPerPiece: 0.4, mealsPerKg: 2.5, co2PerKg: 13.6, chfPerKg: 16 };
+  return { ...d, ...(state.impactConfig || {}) };
+}
+
+// Libellé de la quantité annoncée au téléphone, ex « 3 caisses »
+function announcedLabel(entry) {
+  if (!entry || entry.announcedQty == null || entry.announcedQty === '') return null;
+  const unit = entry.announcedUnit === 'pieces' ? 'pièce(s)' : 'caisse(s)';
+  return `${entry.announcedQty} ${unit}`;
+}
+
+/* v3 — géocodage d'adresses */
+const NPA_COORDS = {
+  1201:[46.21,6.15], 1202:[46.215,6.135], 1203:[46.21,6.125], 1204:[46.20,6.145],
+  1205:[46.198,6.138], 1206:[46.193,6.155], 1207:[46.20,6.165], 1208:[46.20,6.15],
+  1209:[46.22,6.12], 1212:[46.18,6.125], 1213:[46.185,6.105], 1214:[46.215,6.09],
+  1217:[46.23,6.08], 1218:[46.232,6.115], 1219:[46.215,6.11], 1226:[46.193,6.193],
+  1227:[46.184,6.139], 1228:[46.16,6.117], 1290:[46.285,6.165], 1260:[46.385,6.235],
+};
+
+function npaEstimate(address) {
+  const m = (address || '').match(/\b(1\d{3})\b/);
+  if (m && NPA_COORDS[+m[1]]) {
+    const [lat, lng] = NPA_COORDS[+m[1]];
+    return { lat, lng };
+  }
+  return { lat: 46.2044, lng: 6.1432 };
+}
+
+// Géocodage précis via OpenStreetMap Nominatim (null si indisponible)
+async function geocodeAddress(address) {
+  try {
+    const url = 'https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=ch,fr&q=' + encodeURIComponent(address);
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 8000);
+    let res;
+    try { res = await fetch(url, { signal: ctrl.signal }); }
+    finally { clearTimeout(timer); }
+    if (!res.ok) return null;
+    const data = await res.json();
+    if (Array.isArray(data) && data[0] && isFinite(+data[0].lat)) {
+      return { lat: +data[0].lat, lng: +data[0].lon };
+    }
+  } catch (e) {}
+  return null;
+}
+
 function distKm(a, b) {
   const R = 6371;
   const toRad = x => x * Math.PI / 180;
@@ -2818,25 +3078,61 @@ function checkCoordWarnings(stores) {
   return warnings;
 }
 
-// Matrice des temps et distances de conduite réels via OSRM /table
+/* ============================================================
+   MOTEUR D'ITINÉRAIRE v3
+   - Matrices de temps de conduite réels via OSRM, avec serveurs
+     de secours, nouvelles tentatives et cache (1 h)
+   - Solveur multi-départs : plus proche voisin + 2-opt + Or-opt
+   - Recalcul possible en cours de tournée (chemin ouvert)
+   ============================================================ */
+const OSRM_SERVERS = [
+  'https://router.project-osrm.org',
+  'https://routing.openstreetmap.de/routed-car',
+];
+const matrixCache = {};
+
+function matrixCacheKey(points) {
+  return points.map(p => p.lat.toFixed(5) + ',' + p.lng.toFixed(5)).join(';');
+}
+
+// Matrice des temps et distances de conduite réels via OSRM /table.
+// Chaque serveur est essayé deux fois avant de passer au suivant.
 async function fetchDrivingMatrix(points) {
-  const coords = points.map(p => `${p.lng},${p.lat}`).join(';');
-  const url = `https://router.project-osrm.org/table/v1/driving/${coords}?annotations=duration,distance`;
-  const ctrl = new AbortController();
-  const timer = setTimeout(() => ctrl.abort(), 9000);
-  const res = await fetch(url, { signal: ctrl.signal });
-  clearTimeout(timer);
-  if (!res.ok) throw new Error('OSRM ' + res.status);
-  const data = await res.json();
-  if (data.code !== 'Ok' || !data.durations || !data.distances) throw new Error('OSRM réponse invalide');
-  const n = points.length;
-  for (let i = 0; i < n; i++) {
-    for (let j = 0; j < n; j++) {
-      if (data.durations[i][j] == null) data.durations[i][j] = 1e9;
-      if (data.distances[i][j] == null) data.distances[i][j] = 1e9;
+  const key = matrixCacheKey(points);
+  const hit = matrixCache[key];
+  if (hit && Date.now() - hit.ts < 3600000) return hit;
+  let lastErr = null;
+  for (const server of OSRM_SERVERS) {
+    for (let attempt = 0; attempt < 2; attempt++) {
+      try {
+        const coords = points.map(p => `${p.lng},${p.lat}`).join(';');
+        const url = `${server}/table/v1/driving/${coords}?annotations=duration,distance`;
+        const ctrl = new AbortController();
+        const timer = setTimeout(() => ctrl.abort(), 8000);
+        let res;
+        try { res = await fetch(url, { signal: ctrl.signal }); }
+        finally { clearTimeout(timer); }
+        if (!res.ok) throw new Error('OSRM ' + res.status);
+        const data = await res.json();
+        if (data.code !== 'Ok' || !data.durations || !data.distances) throw new Error('OSRM réponse invalide');
+        const n = points.length;
+        for (let i = 0; i < n; i++) {
+          for (let j = 0; j < n; j++) {
+            // Trou dans la matrice : estimation à vol d'oiseau plutôt qu'un coût infini
+            if (data.durations[i][j] == null || data.distances[i][j] == null) {
+              const m = distKm(points[i], points[j]) * 1000 * 1.3;
+              data.distances[i][j] = m;
+              data.durations[i][j] = m / 8.33; // ~30 km/h
+            }
+          }
+        }
+        const out = { dur: data.durations, dist: data.distances, ts: Date.now() };
+        matrixCache[key] = out;
+        return out;
+      } catch (e) { lastErr = e; }
     }
   }
-  return { dur: data.durations, dist: data.distances };
+  throw lastErr || new Error('OSRM indisponible');
 }
 
 // Matrice de secours à vol d'oiseau (facteur routier 1.3) si OSRM indisponible
@@ -2851,33 +3147,28 @@ function haversineMatrices(points) {
   return { dur: dist, dist };
 }
 
+async function buildMatrix(points) {
+  try {
+    const mat = await fetchDrivingMatrix(points);
+    return { mat, source: 'osrm' };
+  } catch (e) {
+    return { mat: haversineMatrices(points), source: 'local' };
+  }
+}
+
 function tourCost(t, cost) {
   let c = 0;
   for (let i = 0; i < t.length; i++) c += cost[t[i]][t[(i + 1) % t.length]];
   return c;
 }
 
-// Solveur de tournée : plus proche voisin puis améliorations 2-opt et Or-opt
-// Noeud 0 = dépôt (départ et retour). Coût = temps de conduite réel.
-function solveTour(cost) {
-  const n = cost.length;
-  const visited = new Array(n).fill(false);
-  visited[0] = true;
-  let best = [0];
-  let cur = 0;
-  for (let k = 1; k < n; k++) {
-    let pick = -1, pickC = Infinity;
-    for (let j = 1; j < n; j++) {
-      if (!visited[j] && cost[cur][j] < pickC) { pickC = cost[cur][j]; pick = j; }
-    }
-    visited[pick] = true;
-    best.push(pick);
-    cur = pick;
-  }
+// Améliore un cycle par 2-opt puis Or-opt (segments de 1 à 3) jusqu'à l'optimum local
+function improveCycle(tour, cost) {
+  const n = tour.length;
+  let best = tour.slice();
   let bestC = tourCost(best, cost);
-  let improved = true;
-  let guard = 0;
-  while (improved && guard++ < 300) {
+  let improved = true, guard = 0;
+  while (improved && guard++ < 500) {
     improved = false;
     for (let i = 1; i < n - 1; i++) {
       for (let j = i + 1; j < n; j++) {
@@ -2898,7 +3189,91 @@ function solveTour(cost) {
       }
     }
   }
+  return { tour: best, cost: bestC };
+}
+
+// Cycle glouton : dépôt → premier arrêt imposé → plus proche voisin
+function nnCycleFrom(cost, firstStop) {
+  const n = cost.length;
+  const visited = new Array(n).fill(false);
+  visited[0] = true;
+  const t = [0];
+  let cur = 0;
+  if (firstStop != null) { visited[firstStop] = true; t.push(firstStop); cur = firstStop; }
+  while (t.length < n) {
+    let pick = -1, pc = Infinity;
+    for (let j = 1; j < n; j++) {
+      if (!visited[j] && cost[cur][j] < pc) { pc = cost[cur][j]; pick = j; }
+    }
+    visited[pick] = true;
+    t.push(pick);
+    cur = pick;
+  }
+  return t;
+}
+
+// Solveur de tournée multi-départs. Noeud 0 = dépôt (départ et retour).
+// Coût = temps de conduite réel. Quasi-optimal jusqu'à ~40 arrêts.
+function solveTour(cost) {
+  const n = cost.length;
+  if (n <= 3) return Array.from({ length: n }, (_, i) => i);
+  const t0 = Date.now();
+  let best = null, bestC = Infinity;
+  const consider = (r) => { if (r.cost < bestC - 1e-6) { bestC = r.cost; best = r.tour; } };
+  // Départs multiples : jusqu'à 14 premiers arrêts, priorisés par proximité au dépôt
+  const firsts = [];
+  for (let j = 1; j < n; j++) firsts.push(j);
+  firsts.sort((a, b) => cost[0][a] - cost[0][b]);
+  const maxStarts = Math.min(firsts.length, 14);
+  for (let sIdx = 0; sIdx < maxStarts; sIdx++) {
+    if (best && Date.now() - t0 > 1800) break;
+    consider(improveCycle(nnCycleFrom(cost, firsts[sIdx]), cost));
+  }
+  // Redémarrages aléatoires pour échapper aux optima locaux
+  for (let r = 0; r < 8; r++) {
+    if (Date.now() - t0 > 2800) break;
+    const rest = [];
+    for (let j = 1; j < n; j++) rest.push(j);
+    for (let i = rest.length - 1; i > 0; i--) {
+      const k = Math.floor(Math.random() * (i + 1));
+      [rest[i], rest[k]] = [rest[k], rest[i]];
+    }
+    consider(improveCycle([0].concat(rest), cost));
+  }
   return best;
+}
+
+// Chemin ouvert : départ fixe (noeud 0), arrivée fixe (dernier noeud)
+function solveOpenPath(cost) {
+  const n = cost.length;
+  if (n <= 3) return Array.from({ length: n }, (_, i) => i);
+  const end = n - 1;
+  const mid = new Set();
+  for (let j = 1; j < end; j++) mid.add(j);
+  let path = [0];
+  let cur = 0;
+  while (mid.size) {
+    let pick = -1, pc = Infinity;
+    mid.forEach(j => { if (cost[cur][j] < pc) { pc = cost[cur][j]; pick = j; } });
+    mid.delete(pick);
+    path.push(pick);
+    cur = pick;
+  }
+  path.push(end);
+  const pathCost = pp => { let c = 0; for (let i = 0; i < pp.length - 1; i++) c += cost[pp[i]][pp[i + 1]]; return c; };
+  let bestC = pathCost(path);
+  let improved = true, guard = 0;
+  while (improved && guard++ < 300) {
+    improved = false;
+    for (let i = 1; i < path.length - 2; i++) {
+      for (let j = i + 1; j < path.length - 1; j++) {
+        const cand = path.slice(0, i).concat(path.slice(i, j + 1).reverse(), path.slice(j + 1));
+        const c = pathCost(cand);
+        if (c < bestC - 1e-6) { path = cand; bestC = c; improved = true; }
+      }
+    }
+  }
+  return path;
 }
 
 async function optimizeRoute(storeIds) {
@@ -2909,14 +3284,7 @@ async function optimizeRoute(storeIds) {
   }
   const safeStores = stores.map(s => (isFinite(s.lat) && isFinite(s.lng)) ? s : { ...s, lat: state.depot.lat, lng: state.depot.lng });
   const points = [state.depot, ...safeStores];
-  let mat, source;
-  try {
-    mat = await fetchDrivingMatrix(points);
-    source = 'osrm';
-  } catch (e) {
-    mat = haversineMatrices(points);
-    source = 'local';
-  }
+  const { mat, source } = await buildMatrix(points);
   const order = solveTour(mat.dur);
   const start = order.indexOf(0);
   const rotated = order.slice(start).concat(order.slice(0, start));
@@ -2934,6 +3302,18 @@ async function optimizeRoute(storeIds) {
     source,
     warnings,
   };
+}
+
+// Réordonne les arrêts restants : départ du magasin courant, retour au dépôt
+async function optimizeOpenRoute(startStore, storeIds) {
+  const stores = storeIds.map(id => state.stores.find(s => s.id === id)).filter(Boolean);
+  if (stores.length < 2) return { orderedIds: stores.map(s => s.id), source: 'osrm' };
+  const safe = st => (isFinite(st.lat) && isFinite(st.lng)) ? st : { ...st, lat: state.depot.lat, lng: state.depot.lng };
+  const points = [safe(startStore), ...stores.map(safe), state.depot];
+  const { mat, source } = await buildMatrix(points);
+  const path = solveOpenPath(mat.dur);
+  const orderedIds = path.slice(1, -1).map(idx => stores[idx - 1].id);
+  return { orderedIds, source };
 }
 
 function showToast(msg, type='') {
@@ -3067,8 +3447,9 @@ function ensureSaisie(dateKey) {
 
 function renderEntry() {
   document.getElementById('today-date').textContent = fmtDateLong(new Date());
+  const nbActifs = state.stores.filter(st => !isStoreDisabled(st)).length;
   document.getElementById('footer-stamp').textContent =
-    `— ${state.stores.length} magasins · ${Object.keys(state.saisies).length} tournée(s) · synchronisation Firebase`;
+    `— ${state.stores.length} magasins (${nbActifs} actifs) · ${Object.keys(state.saisies).length} tournée(s) · synchronisation Firebase`;
 
   const dateInput = document.getElementById('entry-date');
   dateInput.value = entryDateKey;
@@ -3079,33 +3460,47 @@ function renderEntry() {
   list.innerHTML = '';
 
   const q = searchQuery.toLowerCase().trim();
-  const filtered = state.stores.filter(s => {
-    const status = saisie.storeStatuses[s.id]?.status;
-    const match = !q || s.name.toLowerCase().includes(q) || s.address.toLowerCase().includes(q) ||
-                  s.id.toLowerCase().includes(q) || (s.phone && s.phone.includes(q));
-    if (!match) return false;
+  const matches = st => !q || st.name.toLowerCase().includes(q) || st.address.toLowerCase().includes(q) ||
+                  st.id.toLowerCase().includes(q) || (st.phone && st.phone.includes(q));
+  const actives = state.stores.filter(st => !isStoreDisabled(st));
+  const disabledStores = state.stores.filter(st => isStoreDisabled(st));
+  const filtered = actives.filter(st => {
+    const status = saisie.storeStatuses[st.id]?.status;
+    if (!matches(st)) return false;
     if (activeFilter === 'pending') return !status;
     if (activeFilter === 'yes') return status === 'yes';
     if (activeFilter === 'no') return status === 'no';
     return true;
   });
+  // Magasins désactivés : visibles uniquement dans « Tous », en version réduite
+  const filteredDisabled = activeFilter === 'all' ? disabledStores.filter(matches) : [];
 
   filtered.forEach(store => {
     const entry = saisie.storeStatuses[store.id] || {};
     const status = entry.status;
     const note = entry.note || '';
+    const annQty = entry.announcedQty != null ? entry.announcedQty : '';
+    const annUnit = entry.announcedUnit || 'caisses';
 
     const row = document.createElement('div');
     row.className = 'store-row' + (status === 'yes' ? ' status-yes' : status === 'no' ? ' status-no' : '');
     row.innerHTML = `
       <div class="store-info-block">
-        <div class="store-name">${store.name}</div>
-        <div class="store-address">${store.address}</div>
+        <div class="store-name">${escapeHtml(store.name)}</div>
+        <div class="store-address">${escapeHtml(store.address)}</div>
         <a href="tel:${(store.phone||'').replace(/\s/g,'')}" class="store-phone" onclick="event.stopPropagation()">
           📞 ${store.phone || '—'}
         </a>
         <div class="store-id">Réf. ${store.id}</div>
-        <textarea class="store-note-input" placeholder="Note pour le livreur (optionnel) — ex: sonner à l'arrière, demander Marie, etc." data-store="${store.id}">${note}</textarea>
+        <textarea class="store-note-input" placeholder="Note pour le livreur (optionnel) — ex: sonner à l'arrière, demander Marie, etc." data-store="${store.id}">${escapeHtml(note)}</textarea>
+        <div class="store-announce" title="Quantité annoncée par le magasin au téléphone (optionnel)">
+          <label for="ann-${store.id}">📞 Annoncé :</label>
+          <input type="number" min="0" step="1" inputmode="numeric" id="ann-${store.id}" class="store-announce-qty" data-store="${store.id}" value="${annQty}" placeholder="—">
+          <select class="store-announce-unit" data-store="${store.id}" aria-label="Unité annoncée">
+            <option value="caisses"${annUnit !== 'pieces' ? ' selected' : ''}>caisses</option>
+            <option value="pieces"${annUnit === 'pieces' ? ' selected' : ''}>pièces</option>
+          </select>
+        </div>
       </div>
       <div class="store-actions">
         <button class="status-btn yes-btn ${status === 'yes' ? 'active' : ''}" data-store="${store.id}" data-status="yes">✓ Viande</button>
@@ -3115,17 +3510,33 @@ function renderEntry() {
     list.appendChild(row);
   });
 
-  if (!filtered.length) {
+  // Magasins désactivés — affichage réduit et grisé avec la note associée
+  filteredDisabled.forEach(store => {
+    const row = document.createElement('div');
+    row.className = 'store-row store-disabled';
+    row.innerHTML = `
+      <div class="store-disabled-head">
+        <span class="store-disabled-badge">Désactivé</span>
+        <span class="store-disabled-name">${escapeHtml(store.name)}</span>
+        <span class="store-id">Réf. ${store.id}</span>
+      </div>
+      ${store.disabledNote ? `<div class="store-disabled-note">⚠ ${escapeHtml(store.disabledNote)}</div>` : ''}
+      ${store.disabledUntil ? `<div class="store-disabled-note">Réactivation automatique le ${fmtDate(dateKeyToDate(store.disabledUntil))}</div>` : ''}
+    `;
+    list.appendChild(row);
+  });
+
+  if (!filtered.length && !filteredDisabled.length) {
     list.innerHTML = '<div style="grid-column: 1 / -1; padding:40px; text-align:center; color: var(--ink-muted); font-style:italic; border: 2px dashed var(--line);">Aucun magasin ne correspond à votre recherche.</div>';
   }
 
-  const statuses = Object.values(saisie.storeStatuses);
-  const yes = statuses.filter(s => s.status === 'yes').length;
-  const no = statuses.filter(s => s.status === 'no').length;
-  document.getElementById('stat-total').textContent = state.stores.length;
+  // Statistiques calculées sur les magasins actifs uniquement
+  const yes = actives.filter(st => saisie.storeStatuses[st.id]?.status === 'yes').length;
+  const no = actives.filter(st => saisie.storeStatuses[st.id]?.status === 'no').length;
+  document.getElementById('stat-total').textContent = actives.length;
   document.getElementById('stat-yes').textContent = yes;
   document.getElementById('stat-no').textContent = no;
-  document.getElementById('stat-remaining').textContent = state.stores.length - yes - no;
+  document.getElementById('stat-remaining').textContent = Math.max(0, actives.length - yes - no);
   document.getElementById('action-yes').textContent = yes;
   document.getElementById('action-no').textContent = no;
 
@@ -3137,7 +3548,7 @@ function renderEntry() {
       // Recliquer sur le même statut le retire
       if (saisie.storeStatuses[id].status === newStatus) {
         delete saisie.storeStatuses[id].status;
-        if (!saisie.storeStatuses[id].note) delete saisie.storeStatuses[id];
+        if (!saisie.storeStatuses[id].note && saisie.storeStatuses[id].announcedQty == null) delete saisie.storeStatuses[id];
       } else {
         saisie.storeStatuses[id].status = newStatus;
       }
@@ -3156,12 +3567,37 @@ function renderEntry() {
         const v = e.target.value.trim();
         if (v) saisie.storeStatuses[id].note = v;
         else delete saisie.storeStatuses[id].note;
-        if (!saisie.storeStatuses[id].status && !saisie.storeStatuses[id].note) {
+        if (!saisie.storeStatuses[id].status && !saisie.storeStatuses[id].note && saisie.storeStatuses[id].announcedQty == null) {
           delete saisie.storeStatuses[id];
         }
         pushSaisie(entryDateKey);
       }, 500);
     });
+  });
+
+  // Quantité annoncée au téléphone (optionnelle)
+  const saveAnnounce = (id) => {
+    const qEl = list.querySelector(`.store-announce-qty[data-store="${id}"]`);
+    const uEl = list.querySelector(`.store-announce-unit[data-store="${id}"]`);
+    if (!qEl || !uEl) return;
+    if (!saisie.storeStatuses[id]) saisie.storeStatuses[id] = {};
+    const entry = saisie.storeStatuses[id];
+    const v = qEl.value === '' ? null : Math.max(0, +qEl.value || 0);
+    if (v == null) {
+      delete entry.announcedQty;
+      delete entry.announcedUnit;
+    } else {
+      entry.announcedQty = v;
+      entry.announcedUnit = uEl.value;
+    }
+    if (!entry.status && !entry.note && entry.announcedQty == null) delete saisie.storeStatuses[id];
+    pushSaisie(entryDateKey);
+  };
+  list.querySelectorAll('.store-announce-qty').forEach(inp => {
+    inp.addEventListener('change', e => saveAnnounce(e.target.dataset.store));
+  });
+  list.querySelectorAll('.store-announce-unit').forEach(sel => {
+    sel.addEventListener('change', e => saveAnnounce(e.target.dataset.store));
   });
 }
 
@@ -3207,7 +3643,13 @@ document.getElementById('btn-reset').addEventListener('click', async () => {
 
 document.getElementById('btn-validate').addEventListener('click', async () => {
   const saisie = ensureSaisie(entryDateKey);
-  const yesStores = Object.entries(saisie.storeStatuses).filter(([_,v]) => v.status === 'yes').map(([k]) => k);
+  const yesStores = Object.entries(saisie.storeStatuses)
+    .filter(([_, v]) => v.status === 'yes')
+    .map(([k]) => k)
+    .filter(sid => {
+      const st = state.stores.find(x => x.id === sid);
+      return st && !isStoreDisabled(st);
+    });
   if (!yesStores.length) {
     showToast('Aucun magasin avec viande sélectionné', 'error');
     return;
@@ -3218,6 +3660,7 @@ document.getElementById('btn-validate').addEventListener('click', async () => {
   saisie.validatedAt = new Date().toISOString();
   saisie.optimizedRoute = orderedIds;
   saisie.totalDist = totalDist;
+  saisie.routeSource = source;
   // Temps estimé : durée routière réelle si disponible, sinon distance / 25 km/h + 5 min par arrêt
   const drivePart = drivingMin != null ? drivingMin : (totalDist / 25) * 60;
   const stopsMin = orderedIds.length * 5;
@@ -3311,7 +3754,6 @@ function renderDriver() {
     .sort().reverse();
 
   const selector = document.getElementById('route-selector');
-  const selectorList = document.getElementById('route-selector-list');
   const driverToolbar = document.getElementById('driver-toolbar');
 
   if (!routeKeys.length) {
@@ -3339,26 +3781,26 @@ function renderDriver() {
 
   selector.style.display = '';
   driverToolbar.style.display = 'flex';
-  selectorList.innerHTML = '';
-  routeKeys.slice(0, 8).forEach((key, idx) => {
-    const isLatest = idx === 0;
-    const isActive = key === currentRouteKey;
-    const saisie = state.saisies[key];
-    const total = saisie.optimizedRoute.length;
-    const done = saisie.optimizedRoute.filter(sid => state.collectes[`${key}-${sid}`]?.done).length;
-    const chip = document.createElement('button');
-    chip.className = 'route-chip' + (isLatest ? ' latest' : '') + (isActive ? ' active' : '');
-    chip.innerHTML = `
-      <div class="route-chip-date">Semaine ${weekNum(key)}</div>
-      <div class="route-chip-meta">${fmtTourDay(key)} · ${done}/${total} arrêts ${isLatest ? '· DERNIÈRE' : ''}</div>
-    `;
-    chip.addEventListener('click', () => {
-      if (currentRouteKey !== key) driveCurrentIdx = 0;
-      currentRouteKey = key;
-      renderDriver();
-    });
-    selectorList.appendChild(chip);
+  // Menu déroulant compact : tout l'historique accessible sans encombrer l'écran
+  const sel = document.getElementById('route-select');
+  sel.innerHTML = '';
+  routeKeys.forEach((key, idx) => {
+    const sa = state.saisies[key];
+    const total = sa.optimizedRoute.length;
+    const done = sa.optimizedRoute.filter(sid => state.collectes[`${key}-${sid}`]?.done).length;
+    const opt = document.createElement('option');
+    opt.value = key;
+    opt.textContent = `Semaine ${weekNum(key)} — ${fmtTourDay(key)} · ${done}/${total} arrêts${idx === 0 ? ' · dernière' : ''}`;
+    sel.appendChild(opt);
   });
+  sel.value = currentRouteKey;
+  sel.onchange = () => {
+    if (currentRouteKey !== sel.value) driveCurrentIdx = 0;
+    currentRouteKey = sel.value;
+    renderDriver();
+  };
+  const cntEl = document.getElementById('route-select-count');
+  if (cntEl) cntEl.textContent = `${routeKeys.length} tournée(s) en historique`;
 
   document.querySelectorAll('#driver-mode-toggle .mode-btn').forEach(b => {
     b.classList.toggle('active', b.dataset.mode === driverMode);
@@ -3430,6 +3872,11 @@ function renderDriveMode(route, saisie) {
               <div class="drive-prestart-stat-value">${fmtDuration(estMin)}</div>
             </div>
           </div>
+          ${saisie.routeSource === 'local' ? `
+          <div class="route-source-warn">
+            ⚠ Itinéraire estimé hors ligne (à vol d'oiseau) — l'ordre peut être sous-optimal.
+            <button class="btn btn-sm btn-ghost" id="drive-fixroute">Recalculer avec les temps routiers</button>
+          </div>` : ''}
           <button class="drive-start-btn" id="drive-start">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
             Démarrer la tournée
@@ -3442,6 +3889,22 @@ function renderDriveMode(route, saisie) {
       saisie.startedAt = new Date().toISOString();
       await pushSaisie(currentRouteKey);
       showToast('Tournée démarrée — bonne route !', 'success');
+      renderDriver();
+    });
+    const fixBtn = document.getElementById('drive-fixroute');
+    if (fixBtn) fixBtn.addEventListener('click', async () => {
+      showToast('Recalcul de l\'itinéraire routier…');
+      const { orderedIds, totalDist, drivingMin, source } = await optimizeRoute(saisie.optimizedRoute);
+      if (source !== 'osrm') {
+        showToast('Réseau toujours indisponible — réessayez plus tard', 'error');
+        return;
+      }
+      saisie.optimizedRoute = orderedIds;
+      saisie.totalDist = totalDist;
+      saisie.routeSource = source;
+      saisie.estimatedMinutes = Math.round(drivingMin + orderedIds.length * 5);
+      await pushSaisie(currentRouteKey);
+      showToast('Itinéraire routier recalculé', 'success');
       renderDriver();
     });
     return;
@@ -3599,6 +4062,7 @@ function renderDriveMode(route, saisie) {
   const key = `${currentRouteKey}-${storeId}`;
   const col = state.collectes[key] || { qty: 0, done: false };
   const note = saisie.storeStatuses[storeId]?.note || '';
+  const announced = announcedLabel(saisie.storeStatuses[storeId]);
   const isFirst = driveCurrentIdx === 0;
   const isLast = driveCurrentIdx === route.length - 1;
   const liveDuration = tourActiveMinutes(saisie);
@@ -3639,6 +4103,13 @@ function renderDriveMode(route, saisie) {
           </div>
         ` : ''}
 
+        ${announced ? `
+          <div class="drive-announce">
+            <div class="drive-announce-label">📞 Annoncé au téléphone</div>
+            <div class="drive-announce-text">${announced}</div>
+          </div>
+        ` : ''}
+
         <div class="drive-action-row">
           <div class="drive-qty-stepper">
             <button class="drive-qty-btn" id="qty-minus">−</button>
@@ -3670,6 +4141,8 @@ function renderDriveMode(route, saisie) {
         <div class="drive-jumper" id="drive-jumper" style="display:none;">
           <div class="drive-jumper-dots" id="drive-jumper-dots"></div>
         </div>
+
+        <button class="drive-reopt" id="drive-reopt" title="Réordonne les arrêts restants depuis l'arrêt affiché (utile si vous avez sauté un arrêt ou dévié)">⟳ Recalculer l'ordre des arrêts restants</button>
       </div>
     </div>
   `;
@@ -3685,6 +4158,9 @@ function renderDriveMode(route, saisie) {
       renderDriver();
     });
   }
+
+  const reoptBtn = document.getElementById('drive-reopt');
+  if (reoptBtn) reoptBtn.addEventListener('click', reoptimizeRemainingStops);
 
   const dotsEl = document.getElementById('drive-jumper-dots');
   route.forEach((sid, idx) => {
@@ -3762,6 +4238,29 @@ function renderDriveMode(route, saisie) {
   });
 }
 
+// Recalcule l'ordre des arrêts restants depuis l'arrêt affiché (mode conduite)
+async function reoptimizeRemainingStops() {
+  const saisie = state.saisies[currentRouteKey];
+  if (!saisie || !saisie.optimizedRoute?.length) return;
+  const route = saisie.optimizedRoute;
+  const curSid = route[driveCurrentIdx];
+  const curStore = state.stores.find(st => st.id === curSid);
+  if (!curStore) return;
+  const doneIds = route.filter(sid => sid !== curSid && state.collectes[`${currentRouteKey}-${sid}`]?.done);
+  const remaining = route.filter(sid => sid !== curSid && !state.collectes[`${currentRouteKey}-${sid}`]?.done);
+  if (remaining.length < 2) {
+    showToast('Pas assez d\'arrêts restants à réordonner');
+    return;
+  }
+  showToast('Recalcul de l\'ordre des arrêts restants…');
+  const { orderedIds, source } = await optimizeOpenRoute(curStore, remaining);
+  saisie.optimizedRoute = [...doneIds, curSid, ...orderedIds];
+  driveCurrentIdx = doneIds.length;
+  await pushSaisie(currentRouteKey);
+  showToast(source === 'osrm' ? 'Ordre recalculé (temps de conduite réels)' : 'Ordre recalculé (estimation hors ligne)', 'success');
+  renderDriver();
+}
+
 function renderListMode(route, saisie) {
   const content = document.getElementById('route-content');
   const list = document.createElement('div');
@@ -3773,6 +4272,7 @@ function renderListMode(route, saisie) {
     const key = `${currentRouteKey}-${storeId}`;
     const col = state.collectes[key] || { qty: 0, done: false };
     const note = saisie.storeStatuses[storeId]?.note || '';
+    const announced = announcedLabel(saisie.storeStatuses[storeId]);
 
     const item = document.createElement('div');
     item.className = 'route-item' + (col.done ? ' completed' : '');
@@ -3785,6 +4285,7 @@ function renderListMode(route, saisie) {
           <a href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(store.address)}&travelmode=driving" target="_blank" class="route-info-maps">↗ Itinéraire Google Maps</a>
         </div>
         ${note ? `<div class="route-note">${note.replace(/</g,'&lt;')}</div>` : ''}
+        ${announced ? `<span class="route-announce">📞 Annoncé : ${announced}</span>` : ''}
       </div>
       <div class="qty-input">
         <label>Pièces</label>
@@ -3853,6 +4354,7 @@ function printCurrentRoute() {
     const store = state.stores.find(s => s.id === sid);
     if (!store) return '';
     const note = saisie.storeStatuses[sid]?.note || '';
+    const announced = announcedLabel(saisie.storeStatuses[sid]);
     return `
       <tr>
         <td class="num-cell">${String(idx+1).padStart(2,'0')}</td>
@@ -3861,6 +4363,7 @@ function printCurrentRoute() {
           <div class="store-cell-addr">${store.address}</div>
           <div class="store-cell-phone">Tél. ${store.phone || '—'} · Réf. ${store.id}</div>
           ${note ? `<div class="store-cell-note"><strong>⚠ Note :</strong> ${note.replace(/</g,'&lt;')}</div>` : ''}
+          ${announced ? `<div class="store-cell-note"><strong>📞 Annoncé :</strong> ${announced}</div>` : ''}
         </td>
         <td class="qty-cell">
           <div class="qty-box"></div>
@@ -4292,6 +4795,32 @@ const METRICS = {
     const d = Object.keys(m).sort().pop();
     return d ? String(m[d]) : '—';
   } },
+  rejected:        { label: 'Pièces perdues (décongelées)', compute: ctx => String(ctx.collectes.reduce((a,c) => a + (c.rejected || 0), 0)) },
+  net_pieces:      { label: 'Pièces nettes (après tri)', compute: ctx => String(ctx.collectes.reduce((a,c) => a + Math.max(0, c.qty - (c.rejected || 0)), 0)) },
+  loss_rate:       { label: 'Taux de perte (décongélation)', compute: ctx => {
+    const tot = ctx.collectes.reduce((a,c) => a + c.qty, 0);
+    const rej = ctx.collectes.reduce((a,c) => a + (c.rejected || 0), 0);
+    return tot ? (rej / tot * 100).toFixed(1) + '<span class="stat-unit">%</span>' : '—';
+  } },
+  kg_saved:        { label: 'Viande sauvée (kg)', compute: ctx => {
+    const net = ctx.collectes.reduce((a,c) => a + Math.max(0, c.qty - (c.rejected || 0)), 0);
+    return String(Math.round(net * impactCfg().kgPerPiece)) + '<span class="stat-unit">kg</span>';
+  } },
+  meals_saved:     { label: 'Repas équivalents', compute: ctx => {
+    const net = ctx.collectes.reduce((a,c) => a + Math.max(0, c.qty - (c.rejected || 0)), 0);
+    const cfg = impactCfg();
+    return String(Math.round(net * cfg.kgPerPiece * cfg.mealsPerKg));
+  } },
+  co2_saved:       { label: 'CO₂e évité (kg)', compute: ctx => {
+    const net = ctx.collectes.reduce((a,c) => a + Math.max(0, c.qty - (c.rejected || 0)), 0);
+    const cfg = impactCfg();
+    return String(Math.round(net * cfg.kgPerPiece * cfg.co2PerKg)) + '<span class="stat-unit">kg</span>';
+  } },
+  value_chf:       { label: 'Valeur marchande sauvée (CHF)', compute: ctx => {
+    const net = ctx.collectes.reduce((a,c) => a + Math.max(0, c.qty - (c.rejected || 0)), 0);
+    const cfg = impactCfg();
+    return Math.round(net * cfg.kgPerPiece * cfg.chfPerKg).toLocaleString('fr-CH') + '<span class="stat-unit">CHF</span>';
+  } },
 };
 
 function metricContext(period) {
@@ -4490,6 +5019,30 @@ function renderAdmin() {
   const last = allCollectes.length ? allCollectes.slice().sort((a,b) => (b.savedAt||'').localeCompare(a.savedAt||''))[0] : null;
   document.getElementById('last-collection').textContent = last ? fmtDate(last.date) : '—';
 
+  // Panneau impact anti-gaspillage (pièces nettes de la période)
+  const impactEl = document.getElementById('impact-tiles');
+  if (impactEl) {
+    const cfgI = impactCfg();
+    const gross = periodCollectes.reduce((a,c) => a + c.qty, 0);
+    const rejectedTot = periodCollectes.reduce((a,c) => a + (c.rejected || 0), 0);
+    const net = Math.max(0, gross - rejectedTot);
+    const kg = net * cfgI.kgPerPiece;
+    const fmtKg = x => x >= 10 ? Math.round(x).toLocaleString('fr-CH') : (Math.round(x * 10) / 10).toLocaleString('fr-CH');
+    const tiles = [
+      { v: fmtKg(kg), u: 'kg', l: 'Viande sauvée de la poubelle' },
+      { v: Math.round(kg * cfgI.mealsPerKg).toLocaleString('fr-CH'), u: '', l: 'Repas équivalents' },
+      { v: Math.round(kg * cfgI.co2PerKg).toLocaleString('fr-CH'), u: 'kg', l: 'CO₂e évité' },
+      { v: Math.round(kg * cfgI.chfPerKg).toLocaleString('fr-CH'), u: 'CHF', l: 'Valeur marchande' },
+      { v: gross ? (rejectedTot / gross * 100).toFixed(1) : '0.0', u: '%', l: 'Taux de perte (décongelé)' },
+    ];
+    impactEl.innerHTML = tiles.map(t => `
+      <div class="impact-tile">
+        <div class="impact-value">${t.v}${t.u ? `<span class="impact-unit">${t.u}</span>` : ''}</div>
+        <div class="impact-label">${t.l}</div>
+      </div>
+    `).join('');
+  }
+
   const dailyMap = {};
   periodCollectes.forEach(c => { dailyMap[c.date] = (dailyMap[c.date]||0) + c.qty; });
   const cumDates = Object.keys(dailyMap).sort();
@@ -4517,25 +5070,30 @@ function renderAdmin() {
   // Tableau performance par magasin
   const storeStats = {};
   periodCollectes.forEach(c => {
-    if (!storeStats[c.storeId]) storeStats[c.storeId] = { pieces: 0, visits: 0 };
+    if (!storeStats[c.storeId]) storeStats[c.storeId] = { pieces: 0, visits: 0, rejected: 0 };
     storeStats[c.storeId].pieces += c.qty;
     storeStats[c.storeId].visits += 1;
+    storeStats[c.storeId].rejected += (c.rejected || 0);
   });
   const storeRows = Object.entries(storeStats).sort((a,b) => b[1].pieces - a[1].pieces);
   const grandTotal = storeRows.reduce((a, [,s]) => a + s.pieces, 0) || 1;
   const perfBody = document.getElementById('store-perf-body');
   if (!storeRows.length) {
-    perfBody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding: 30px; color: var(--ink-muted); font-style: italic;">Aucune donnée sur cette période.</td></tr>';
+    perfBody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding: 30px; color: var(--ink-muted); font-style: italic;">Aucune donnée sur cette période.</td></tr>';
   } else {
     perfBody.innerHTML = storeRows.map(([id, s]) => {
       const store = state.stores.find(st => st.id === id);
       const share = (s.pieces / grandTotal * 100);
+      const lossPct = s.pieces ? (s.rejected / s.pieces * 100) : 0;
+      const lossColor = lossPct >= 20 ? 'var(--red)' : lossPct > 0 ? 'var(--gold)' : 'var(--ink-muted)';
       return `
         <tr>
-          <td class="name">${store ? store.name : id}</td>
+          <td class="name">${store ? store.name : id}${isStoreDisabled(store) ? ' <span class="admin-disabled-tag">désactivé</span>' : ''}</td>
           <td class="num">${s.pieces}</td>
           <td class="num">${s.visits}</td>
           <td class="num">${(s.pieces / s.visits).toFixed(1)}</td>
+          <td class="num" style="color:${s.rejected ? 'var(--red)' : 'var(--ink-muted)'};">${s.rejected}</td>
+          <td class="num" style="color:${lossColor}; font-weight:600;">${s.pieces ? lossPct.toFixed(0) + '%' : '—'}</td>
           <td>
             <div style="display:flex; align-items:center; gap:8px;">
               <div class="bar-track" style="flex:1; max-width:120px;"><div class="bar-fill" style="width:${share}%; background: var(--green);"></div></div>
@@ -4597,7 +5155,7 @@ function renderAdmin() {
     );
   }
   if (!hist.length) {
-    tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding: 30px; color: var(--ink-muted); font-style: italic;">Aucune collecte trouvée.</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="6" style="text-align:center; padding: 30px; color: var(--ink-muted); font-style: italic;">Aucune collecte trouvée.</td></tr>';
   } else {
     tbody.innerHTML = hist.map(h => {
       const saisie = state.saisies[h.date] || {};
@@ -4609,6 +5167,7 @@ function renderAdmin() {
         <td class="name">${h.storeName}</td>
         <td style="color: var(--ink-soft); font-size: 13px;">${h.address}</td>
         <td class="num">${h.qty}</td>
+        <td class="num" style="color:${h.rejected ? 'var(--red)' : 'var(--ink-muted)'};">${h.rejected || 0}</td>
         <td><span class="admin-tour-status s-${st}" style="display:inline-block;">${stLabel}</span></td>
       </tr>`;
     }).join('');
@@ -4618,12 +5177,13 @@ function renderAdmin() {
   const tsBody = document.getElementById('tours-summary-body');
   const toursDesc = periodTours.slice().reverse();
   if (!toursDesc.length) {
-    tsBody.innerHTML = '<tr><td colspan="9" style="text-align:center; padding: 30px; color: var(--ink-muted); font-style: italic;">Aucune tournée sur cette période.</td></tr>';
+    tsBody.innerHTML = '<tr><td colspan="10" style="text-align:center; padding: 30px; color: var(--ink-muted); font-style: italic;">Aucune tournée sur cette période.</td></tr>';
   } else {
     tsBody.innerHTML = toursDesc.map(s => {
       const route = s.optimizedRoute || [];
       const done = route.filter(sid => state.collectes[`${s.date}-${sid}`]?.done).length;
       const pieces = route.reduce((a, sid) => a + (state.collectes[`${s.date}-${sid}`]?.qty || 0), 0);
+      const rejectedT = route.reduce((a, sid) => a + (state.collectes[`${s.date}-${sid}`]?.rejected || 0), 0);
       const st = getTourStatus(s);
       const stLabel = tourStatusLabel(st);
       const dur = s.durationMinutes;
@@ -4636,6 +5196,7 @@ function renderAdmin() {
           <td class="num">${route.length}</td>
           <td class="num">${done}</td>
           <td class="num">${pieces}</td>
+          <td class="num" style="color:${rejectedT ? 'var(--red)' : 'var(--ink-muted)'};">${rejectedT}</td>
           <td class="num">${s.totalDist != null ? s.totalDist.toFixed(1) : '—'}</td>
           <td class="num">${est != null ? fmtDuration(est) : '—'}</td>
           <td class="num">${dur != null ? fmtDuration(dur) : '—'}</td>
@@ -4669,15 +5230,18 @@ function fmtTimeISO(iso) {
 function exportAllCollectes() {
   const arr = getCollectesArray();
   if (!arr.length) { showToast('Aucune donnée à exporter'); return; }
-  const rows = [['Semaine','Date','Jour','Code magasin','Nom magasin','Adresse','Telephone','Pieces','Validé le','Statut tournée','Durée (min)','Estimation (min)','Distance (km)','Heure début','Heure fin']];
+  const rows = [['Semaine','Date','Jour','Code magasin','Nom magasin','Adresse','Telephone','Pieces','Rejetees (decongelees)','Pieces nettes','Annonce tel.','Validé le','Statut tournée','Durée (min)','Estimation (min)','Distance (km)','Heure début','Heure fin']];
   arr.sort((a,b) => a.date.localeCompare(b.date) || (a.storeName||'').localeCompare(b.storeName||'')).forEach(c => {
     const saisie = state.saisies[c.date] || {};
     const store = state.stores.find(s => s.id === c.storeId);
     const st = getTourStatus(saisie);
+    const annEntry = saisie.storeStatuses ? saisie.storeStatuses[c.storeId] : null;
     rows.push([
       weekNum(c.date), fmtDate(c.date), dayName(c.date), c.storeId, c.storeName, c.address,
       store?.phone || '',
-      c.qty, c.savedAt ? fmtDate(c.savedAt) : '',
+      c.qty, c.rejected || 0, Math.max(0, c.qty - (c.rejected || 0)),
+      announcedLabel(annEntry) || '',
+      c.savedAt ? fmtDate(c.savedAt) : '',
       tourStatusLabel(st),
       saisie.durationMinutes ?? '', saisie.estimatedMinutes ?? '',
       saisie.totalDist != null ? saisie.totalDist.toFixed(1) : '',
@@ -4699,23 +5263,24 @@ function exportHistory() {
     );
   }
   if (!hist.length) { showToast('Aucune donnée à exporter'); return; }
-  const rows = [['Semaine','Date','Jour','Code magasin','Nom magasin','Adresse','Pieces']];
-  hist.forEach(h => rows.push([weekNum(h.date), fmtDate(h.date), dayName(h.date), h.storeId, h.storeName, h.address, h.qty]));
+  const rows = [['Semaine','Date','Jour','Code magasin','Nom magasin','Adresse','Pieces','Rejetees','Nettes']];
+  hist.forEach(h => rows.push([weekNum(h.date), fmtDate(h.date), dayName(h.date), h.storeId, h.storeName, h.address, h.qty, h.rejected || 0, Math.max(0, h.qty - (h.rejected || 0))]));
   downloadCSV(rows, `caritas_denner_historique_${todayISO()}.csv`);
 }
 
 function exportTours() {
   const tours = getToursForPeriod(globalPeriod);
   if (!tours.length) { showToast('Aucune tournée à exporter'); return; }
-  const rows = [['Semaine','Date','Jour','Arrêts prévus','Arrêts faits','Pieces totales','Distance (km)','Estimation (min)','Durée réelle (min)','Écart (min)','Heure début','Heure fin','Statut']];
+  const rows = [['Semaine','Date','Jour','Arrêts prévus','Arrêts faits','Pieces totales','Pieces perdues','Distance (km)','Estimation (min)','Durée réelle (min)','Écart (min)','Heure début','Heure fin','Statut']];
   tours.forEach(s => {
     const route = s.optimizedRoute || [];
     const done = route.filter(sid => state.collectes[`${s.date}-${sid}`]?.done).length;
     const pieces = route.reduce((a, sid) => a + (state.collectes[`${s.date}-${sid}`]?.qty || 0), 0);
+    const rejectedT = route.reduce((a, sid) => a + (state.collectes[`${s.date}-${sid}`]?.rejected || 0), 0);
     const st = getTourStatus(s);
     const diff = (s.durationMinutes != null && s.estimatedMinutes != null) ? s.durationMinutes - s.estimatedMinutes : '';
     rows.push([
-      weekNum(s.date), fmtDate(s.date), dayName(s.date), route.length, done, pieces,
+      weekNum(s.date), fmtDate(s.date), dayName(s.date), route.length, done, pieces, rejectedT,
       s.totalDist != null ? s.totalDist.toFixed(1) : '',
       s.estimatedMinutes ?? '', s.durationMinutes ?? '', diff,
       fmtTimeISO(s.startedAt), fmtTimeISO(s.finishedAt),
@@ -4854,15 +5419,20 @@ function openTourEditor(key) {
   tbody.innerHTML = route.map((sid, idx) => {
     const store = state.stores.find(s => s.id === sid);
     const col = state.collectes[`${key}-${sid}`] || { qty: 0, done: false };
+    const announced = announcedLabel(saisie.storeStatuses ? saisie.storeStatuses[sid] : null);
     return `
       <tr data-store="${sid}">
         <td style="font-weight: 700; font-family: 'Fraunces', serif; font-size: 18px;">${String(idx+1).padStart(2,'0')}</td>
         <td>
           <div style="font-weight: 600;">${store ? store.name : sid}</div>
           <div style="font-size: 12px; color: var(--ink-muted);">${store ? store.address : ''}</div>
+          ${announced ? `<div style="font-size: 11px; color: var(--gold); font-family: 'JetBrains Mono', monospace;">📞 Annoncé : ${announced}</div>` : ''}
         </td>
         <td>
           <input type="number" min="0" step="1" value="${col.qty || 0}" class="tour-stop-qty" data-store="${sid}" style="width: 80px; padding: 6px 8px; border: 1px solid var(--line-strong); font-family: 'JetBrains Mono', monospace; text-align: center;">
+        </td>
+        <td>
+          <input type="number" min="0" step="1" value="${col.rejected || 0}" class="tour-stop-rejected" data-store="${sid}" title="Pièces jetées au tri (décongelées)" style="width: 80px; padding: 6px 8px; border: 1px solid var(--red); font-family: 'JetBrains Mono', monospace; text-align: center; color: var(--red);">
         </td>
         <td>
           <label style="display: flex; align-items: center; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 11px; cursor: pointer;">
@@ -4881,6 +5451,8 @@ function openTourEditor(key) {
     btn.addEventListener('click', async () => {
       const sid = btn.dataset.store;
       const qty = +tbody.querySelector(`.tour-stop-qty[data-store="${sid}"]`).value || 0;
+      let rejected = +tbody.querySelector(`.tour-stop-rejected[data-store="${sid}"]`).value || 0;
+      rejected = Math.max(0, Math.min(rejected, Math.max(0, qty)));
       const done = tbody.querySelector(`.tour-stop-done[data-store="${sid}"]`).checked;
       const colKey = `${key}-${sid}`;
       const store = state.stores.find(s => s.id === sid);
@@ -4890,18 +5462,20 @@ function openTourEditor(key) {
         storeName: store?.name || '',
         address: store?.address || '',
         qty: Math.max(0, qty),
+        rejected: rejected,
         done: done,
         savedAt: done ? (state.collectes[colKey]?.savedAt || new Date().toISOString()) : null,
       };
       await pushCollecte(colKey);
-      showToast(`${store?.name || sid} : ${qty} pièces, ${done ? 'validé' : 'non validé'}`, 'success');
+      showToast(`${store?.name || sid} : ${qty} pièces (${rejected} rejetée(s)), ${done ? 'validé' : 'non validé'}`, 'success');
       renderToursAdmin();
     });
   });
 
   renderToursAdmin();
   setTimeout(() => {
-    document.getElementById('admin-tour-editor').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const edEl = document.getElementById('admin-tour-editor');
+    if (edEl && edEl.scrollIntoView) edEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, 100);
 }
 
@@ -4997,7 +5571,7 @@ document.getElementById('tour-reset-data').addEventListener('click', async () =>
     state.collectes[colKey] = {
       date: editingTourKey, storeId: sid,
       storeName: store?.name || '', address: store?.address || '',
-      qty: 0, done: false, savedAt: null,
+      qty: 0, rejected: 0, done: false, savedAt: null,
     };
     await pushCollecte(colKey);
   }
@@ -5025,30 +5599,184 @@ document.getElementById('tour-delete').addEventListener('click', async () => {
   closeTourEditor();
 });
 
-/* Gestion des magasins */
+/* Gestion des magasins — édition, désactivation temporaire, géocodage */
+let editingStoreId = null;
+
+function buildStoreEditor(st) {
+  const ed = document.createElement('div');
+  ed.className = 'store-editor';
+  const hasCoords = isFinite(st.lat) && isFinite(st.lng);
+  ed.innerHTML = `
+    <div class="se-field"><label>Nom</label><input id="se-name" value="${escapeHtml(st.name)}"></div>
+    <div class="se-field"><label>Téléphone</label><input id="se-phone" value="${escapeHtml(st.phone || '')}"></div>
+    <div class="se-field se-full"><label>Adresse complète (rue, NPA, ville)</label><input id="se-address" value="${escapeHtml(st.address)}"></div>
+    <div class="se-field"><label>Coordonnées GPS</label><div class="geo-status" id="se-geo">${hasCoords ? st.lat.toFixed(5) + ', ' + st.lng.toFixed(5) : '⚠ manquantes'}</div></div>
+    <div class="se-actions">
+      <button class="btn btn-primary btn-sm" id="se-save">Enregistrer</button>
+      <button class="btn btn-ghost btn-sm" id="se-geocode">Géocoder l'adresse</button>
+      <span class="geo-status">L'enregistrement géocode automatiquement si l'adresse a changé.</span>
+    </div>
+    <div class="se-sep"></div>
+    <div class="se-field se-full">
+      <label>Désactivation temporaire — note affichée dans la liste d'appels</label>
+      <input id="se-disable-note" placeholder="ex: pas de ramassage avant le 15.08 (travaux) · ne pas appeler, ils appellent" value="${escapeHtml(st.disabledNote || '')}">
+    </div>
+    <div class="se-field"><label>Réactivation automatique le (optionnel)</label><input type="date" id="se-disable-until" value="${st.disabledUntil || ''}"></div>
+    <div class="se-actions">
+      ${isStoreDisabled(st)
+        ? `<button class="btn btn-primary btn-sm" id="se-enable">Réactiver maintenant</button>
+           <button class="btn btn-ghost btn-sm" id="se-update-disable">Mettre à jour la note</button>`
+        : `<button class="btn btn-danger btn-sm" id="se-disable">Désactiver ce magasin</button>
+           <span class="geo-status">Le magasin sera grisé et réduit dans la liste d'appels, et exclu des tournées.</span>`}
+    </div>
+  `;
+
+  ed.querySelector('#se-geocode').addEventListener('click', async () => {
+    const addr = ed.querySelector('#se-address').value.trim();
+    if (!addr) return showToast('Adresse vide', 'error');
+    showToast('Géocodage en cours…');
+    const geo = await geocodeAddress(addr);
+    if (geo) {
+      st.lat = geo.lat; st.lng = geo.lng;
+      ed.querySelector('#se-geo').textContent = geo.lat.toFixed(5) + ', ' + geo.lng.toFixed(5);
+      pushSettings();
+      showToast('Coordonnées GPS mises à jour', 'success');
+    } else {
+      showToast("Géocodage impossible — vérifiez l'adresse ou la connexion", 'error');
+    }
+  });
+
+  ed.querySelector('#se-save').addEventListener('click', async () => {
+    const name = ed.querySelector('#se-name').value.trim();
+    const address = ed.querySelector('#se-address').value.trim();
+    const phone = ed.querySelector('#se-phone').value.trim();
+    if (!name || !address) return showToast('Nom et adresse obligatoires', 'error');
+    const addressChanged = address !== st.address;
+    st.name = name; st.address = address; st.phone = phone;
+    if (addressChanged) {
+      showToast('Adresse modifiée — géocodage…');
+      const geo = await geocodeAddress(address);
+      if (geo) {
+        st.lat = geo.lat; st.lng = geo.lng;
+      } else {
+        const est = npaEstimate(address);
+        st.lat = est.lat; st.lng = est.lng;
+        showToast('Géocodage indisponible — position estimée par code postal', 'error');
+      }
+    }
+    pushSettings();
+    renderStoresAdmin();
+    renderEntry();
+    showToast('Magasin enregistré', 'success');
+  });
+
+  const readDisableFields = () => ({
+    note: ed.querySelector('#se-disable-note').value.trim(),
+    until: ed.querySelector('#se-disable-until').value || null,
+  });
+
+  const btnDisable = ed.querySelector('#se-disable');
+  if (btnDisable) btnDisable.addEventListener('click', () => {
+    const { note, until } = readDisableFields();
+    st.disabled = true;
+    st.disabledNote = note;
+    st.disabledUntil = until;
+    pushSettings();
+    editingStoreId = null;
+    renderStoresAdmin();
+    renderEntry();
+    showToast(`${st.name} désactivé${until ? " jusqu'au " + fmtDate(dateKeyToDate(until)) : ''}`, 'success');
+  });
+
+  const btnEnable = ed.querySelector('#se-enable');
+  if (btnEnable) btnEnable.addEventListener('click', () => {
+    st.disabled = false;
+    st.disabledNote = '';
+    st.disabledUntil = null;
+    pushSettings();
+    editingStoreId = null;
+    renderStoresAdmin();
+    renderEntry();
+    showToast(`${st.name} réactivé`, 'success');
+  });
+
+  const btnUpd = ed.querySelector('#se-update-disable');
+  if (btnUpd) btnUpd.addEventListener('click', () => {
+    const { note, until } = readDisableFields();
+    st.disabledNote = note;
+    st.disabledUntil = until;
+    pushSettings();
+    renderEntry();
+    showToast('Note de désactivation mise à jour', 'success');
+  });
+
+  return ed;
+}
+
 function renderStoresAdmin() {
   document.getElementById('admin-store-count').textContent = state.stores.length;
   const list = document.getElementById('admin-store-list');
   list.innerHTML = '';
-  state.stores.forEach(s => {
+  state.stores.forEach(st => {
+    const disabled = isStoreDisabled(st);
     const row = document.createElement('div');
-    row.className = 'admin-store-row';
+    row.className = 'admin-store-row' + (disabled ? ' row-disabled' : '');
     row.innerHTML = `
-      <div class="admin-id">${s.id}</div>
-      <div class="admin-name">${s.name}</div>
-      <div style="color: var(--ink-soft);">${s.address}</div>
-      <div class="admin-phone">${s.phone || '—'}</div>
-      <button class="admin-delete" data-id="${s.id}">Supprimer</button>
+      <div class="admin-id">${st.id}</div>
+      <div class="admin-name">${escapeHtml(st.name)}${disabled ? '<span class="admin-disabled-tag">désactivé</span>' : ''}</div>
+      <div style="color: var(--ink-soft);">${escapeHtml(st.address)}${disabled && st.disabledNote ? `<br><span style="font-size:11px; font-style:italic;">⚠ ${escapeHtml(st.disabledNote)}</span>` : ''}</div>
+      <div class="admin-phone">${st.phone || '—'}</div>
+      <div style="display:flex; gap:6px; flex-wrap:wrap; justify-content:flex-end;">
+        <button class="btn btn-ghost btn-sm admin-edit" data-id="${st.id}">${editingStoreId === st.id ? 'Fermer' : 'Modifier'}</button>
+        ${disabled
+          ? `<button class="btn btn-primary btn-sm admin-enable" data-id="${st.id}">Réactiver</button>`
+          : `<button class="btn btn-ghost btn-sm admin-disable" data-id="${st.id}">Désactiver</button>`}
+        <button class="admin-delete" data-id="${st.id}">Supprimer</button>
+      </div>
     `;
     list.appendChild(row);
+    if (editingStoreId === st.id) list.appendChild(buildStoreEditor(st));
   });
+
+  list.querySelectorAll('.admin-edit').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.id;
+      editingStoreId = editingStoreId === id ? null : id;
+      renderStoresAdmin();
+    });
+  });
+
+  list.querySelectorAll('.admin-disable').forEach(btn => {
+    btn.addEventListener('click', () => {
+      editingStoreId = btn.dataset.id;
+      renderStoresAdmin();
+      const noteEl = list.querySelector('#se-disable-note');
+      if (noteEl) noteEl.focus();
+    });
+  });
+
+  list.querySelectorAll('.admin-enable').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const st = state.stores.find(x => x.id === btn.dataset.id);
+      if (!st) return;
+      st.disabled = false;
+      st.disabledNote = '';
+      st.disabledUntil = null;
+      pushSettings();
+      renderStoresAdmin();
+      renderEntry();
+      showToast(`${st.name} réactivé`, 'success');
+    });
+  });
+
   list.querySelectorAll('.admin-delete').forEach(btn => {
     btn.addEventListener('click', async () => {
       const id = btn.dataset.id;
-      const store = state.stores.find(s => s.id === id);
+      const store = state.stores.find(x => x.id === id);
       const ok = await showModal('Supprimer ce magasin ?', `${store.name} sera retiré de la liste. Les données historiques restent intactes.`, true);
       if (ok) {
-        state.stores = state.stores.filter(s => s.id !== id);
+        state.stores = state.stores.filter(x => x.id !== id);
+        if (editingStoreId === id) editingStoreId = null;
         pushSettings();
         renderStoresAdmin();
         renderEntry();
@@ -5058,7 +5786,7 @@ function renderStoresAdmin() {
   });
 }
 
-document.getElementById('btn-add-store').addEventListener('click', () => {
+document.getElementById('btn-add-store').addEventListener('click', async () => {
   const id = document.getElementById('new-store-id').value.trim().toUpperCase();
   const name = document.getElementById('new-store-name').value.trim();
   const address = document.getElementById('new-store-address').value.trim();
@@ -5068,27 +5796,19 @@ document.getElementById('btn-add-store').addEventListener('click', () => {
     showToast('Code, nom et adresse sont obligatoires', 'error');
     return;
   }
-  if (state.stores.find(s => s.id === id)) {
+  if (state.stores.find(x => x.id === id)) {
     showToast('Ce code existe déjà', 'error');
     return;
   }
-  // Coordonnées par défaut : centre de Genève
-  // Estime des coordonnées à partir du NPA de l'adresse
-  const npaMatch = address.match(/\b(1\d{3})\b/);
-  let lat = 46.2044, lng = 6.1432;
-  if (npaMatch) {
-    const npa = +npaMatch[1];
-    // Estimation approximative selon le NPA
-    const npaMap = {
-      1201:[46.21,6.15], 1202:[46.215,6.135], 1203:[46.21,6.125], 1204:[46.20,6.145],
-      1205:[46.198,6.138], 1206:[46.193,6.155], 1207:[46.20,6.165], 1208:[46.20,6.15],
-      1209:[46.22,6.12], 1212:[46.18,6.125], 1213:[46.185,6.105], 1214:[46.215,6.09],
-      1217:[46.23,6.08], 1218:[46.232,6.115], 1219:[46.215,6.11], 1226:[46.193,6.193],
-      1227:[46.184,6.139], 1228:[46.16,6.117], 1290:[46.285,6.165], 1260:[46.385,6.235],
-    };
-    if (npaMap[npa]) { lat = npaMap[npa][0]; lng = npaMap[npa][1]; }
+  // Géocodage en ligne (OpenStreetMap), estimation par code postal en secours
+  showToast('Recherche des coordonnées GPS…');
+  let coords = await geocodeAddress(address);
+  let geoMsg = 'coordonnées GPS trouvées';
+  if (!coords) {
+    coords = npaEstimate(address);
+    geoMsg = 'position estimée par code postal (affinez via « Modifier »)';
   }
-  state.stores.push({ id, name, address, phone, lat, lng });
+  state.stores.push({ id, name, address, phone, lat: coords.lat, lng: coords.lng });
   pushSettings();
   document.getElementById('new-store-id').value = '';
   document.getElementById('new-store-name').value = '';
@@ -5096,7 +5816,7 @@ document.getElementById('btn-add-store').addEventListener('click', () => {
   document.getElementById('new-store-phone').value = '';
   renderStoresAdmin();
   renderEntry();
-  showToast('Magasin ajouté', 'success');
+  showToast(`Magasin ajouté — ${geoMsg}`, 'success');
 });
 
 /* Paramètres */
@@ -5104,6 +5824,14 @@ function renderSettings() {
   document.getElementById('pwd-site').value = state.passwordSite || '';
   document.getElementById('pwd-admin').value = state.passwordAdmin || '';
   document.getElementById('depot-address').value = state.depot.address || '';
+  const cfgI = impactCfg();
+  const kgEl = document.getElementById('impact-kg');
+  if (kgEl) {
+    kgEl.value = cfgI.kgPerPiece;
+    document.getElementById('impact-meals').value = cfgI.mealsPerKg;
+    document.getElementById('impact-co2').value = cfgI.co2PerKg;
+    document.getElementById('impact-chf').value = cfgI.chfPerKg;
+  }
   const dbBox = document.getElementById('db-status');
   const sCount = state.stores.length;
   const sCount2 = Object.keys(state.saisies).length;
@@ -5132,26 +5860,29 @@ document.getElementById('btn-save-pwd-admin').addEventListener('click', () => {
   showToast('Mot de passe admin enregistré', 'success');
 });
 
-document.getElementById('btn-save-depot').addEventListener('click', () => {
+document.getElementById('btn-save-depot').addEventListener('click', async () => {
   const v = document.getElementById('depot-address').value.trim();
   if (!v) return showToast('Adresse vide', 'error');
-  // Cherche le NPA dans l'adresse
-  const npaMatch = v.match(/\b(1\d{3})\b/);
-  let lat = 46.2044, lng = 6.1432;
-  if (npaMatch) {
-    const npa = +npaMatch[1];
-    const npaMap = {
-      1201:[46.21,6.15], 1202:[46.215,6.135], 1203:[46.21,6.125], 1204:[46.20,6.145],
-      1205:[46.198,6.138], 1206:[46.193,6.155], 1207:[46.20,6.165], 1208:[46.20,6.15],
-      1209:[46.22,6.12], 1212:[46.18,6.125], 1213:[46.185,6.105], 1214:[46.215,6.09],
-      1217:[46.23,6.08], 1218:[46.232,6.115], 1219:[46.215,6.11], 1226:[46.193,6.193],
-      1227:[46.184,6.139], 1228:[46.16,6.117], 1290:[46.285,6.165], 1260:[46.385,6.235],
-    };
-    if (npaMap[npa]) { lat = npaMap[npa][0]; lng = npaMap[npa][1]; }
+  showToast('Recherche des coordonnées du dépôt…');
+  let coords = await geocodeAddress(v);
+  if (!coords) {
+    coords = npaEstimate(v);
+    showToast('Géocodage indisponible — position estimée par code postal', 'error');
   }
-  state.depot = { address: v, lat, lng, name: 'Épicerie Caritas (dépôt)' };
+  state.depot = { address: v, lat: coords.lat, lng: coords.lng, name: 'Épicerie Caritas (dépôt)' };
   pushSettings();
   showToast('Dépôt enregistré', 'success');
+});
+
+document.getElementById('btn-save-impact').addEventListener('click', () => {
+  state.impactConfig = {
+    kgPerPiece: Math.max(0, +document.getElementById('impact-kg').value || 0.4),
+    mealsPerKg: Math.max(0, +document.getElementById('impact-meals').value || 2.5),
+    co2PerKg: Math.max(0, +document.getElementById('impact-co2').value || 13.6),
+    chfPerKg: Math.max(0, +document.getElementById('impact-chf').value || 16),
+  };
+  pushSettings();
+  showToast("Facteurs d'impact enregistrés", 'success');
 });
 
 /* GLOBAL RERENDER */
